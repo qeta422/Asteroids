@@ -18,3 +18,4 @@ We create three lives in the corner of our screen as well and we are able to res
 Lastly, the game uses the current score and applies it to the high score using storing data locally.
 </br>
 </br>
+You can see the demo here: https://asteroidrocketgame.netlify.app/
