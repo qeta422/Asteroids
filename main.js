@@ -29,6 +29,18 @@ const TEXT_SIZE = 35; //text font height in pixels
 var canv = document.getElementById("gameCanvas");
 var ctx = canv.getContext("2d");
 
+function resizeCanvas() {
+  var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+  var scrollbarHeight =
+    window.innerHeight - document.documentElement.clientHeight;
+  canv.width = window.innerWidth - scrollbarWidth;
+  canv.height = window.innerHeight - scrollbarHeight;
+}
+
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
 //set up sound effects
 var fxExplode = new sound("sound/explode.m4a");
 var fxHit = new sound("sound/hit.m4a", 5);
@@ -214,23 +226,34 @@ function newAsteroid(x, y, r) {
   return roid;
 }
 
+// Check if the page is loaded for the first time
+var isFirstTimeLoad = true;
+
+function clearHighScore() {
+  // Check if it's the first time load, then clear the high score
+  if (isFirstTimeLoad) {
+    localStorage.removeItem(SAVE_KEY_SCORE);
+    scoreHigh = 0;
+    isFirstTimeLoad = false; // Update the flag to indicate that it's not the first time load anymore
+  }
+}
+
+clearHighScore();
+
 function newGame() {
   level = 0;
   lives = GAME_LIVES;
   score = 0;
   ship = newShip();
-  // scoreHigh = 0;
 
   //get the high score from local storage
+
   var scoreStr = localStorage.getItem(SAVE_KEY_SCORE);
-  if (scoreStr == null) {
-    scoreHigh = 0;
-  } else {
+  if (scoreStr != null) {
     scoreHigh = parseInt(scoreStr);
   }
 
   // var scoreStr = localStorage.getItem(SAVE_KEY_SCORE);
-  // scoreHigh = parseInt(scoreStr);
 
   newLevel();
 }
