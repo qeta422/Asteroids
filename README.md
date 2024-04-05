@@ -13,4 +13,8 @@ By collision detextion, the ship can detect asteroids and perform an explosion. 
 </br>
 Next, the ship will shoot the lasers and with the explosion effect, it will destroy asteroids piece by piece until there's none left.
 </br>
-Finally, we create three lives in the corner of our screen and we are able to reset the game after displaying the "Game over!" text if a playes spends all of the lives.
+We create three lives in the corner of our screen as well and we are able to reset the game after displaying the "Game over!" text if a playes spends all of the lives.
+</br>
+Lastly, the game uses the current score and applies it to the high score using storing data locally.
+</br>
+</br>

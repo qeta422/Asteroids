@@ -210,6 +210,7 @@ function newGame() {
   lives = GAME_LIVES;
   score = 0;
   ship = newShip();
+  // scoreHigh = 0;
 
   //get the high score from local storage
   var scoreStr = localStorage.getItem(SAVE_KEY_SCORE);
@@ -218,6 +219,9 @@ function newGame() {
   } else {
     scoreHigh = parseInt(scoreStr);
   }
+
+  // var scoreStr = localStorage.getItem(SAVE_KEY_SCORE);
+  // scoreHigh = parseInt(scoreStr);
 
   newLevel();
 }
