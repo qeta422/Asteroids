@@ -12,3 +12,5 @@ Creating moving Asteroids allows us to implement an interesting game logic and a
 By collision detextion, the ship can detect asteroids and perform an explosion. After the ship explodes, the game resets and it becomes vulnerable from crushing for several seconds.
 </br>
 Next, the ship will shoot the lasers and with the explosion effect, it will destroy asteroids piece by piece until there's none left.
+</br>
+Finally, we create three lives in the corner of our screen and we are able to reset the game after displaying the "Game over!" text if a playes spends all of the lives.
